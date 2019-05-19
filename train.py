@@ -68,6 +68,7 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
     """
 
     # TODO: Paste the train() method developed in the notebook here.
+
     for epoch in range(1, epochs + 1):
         model.train()
         total_loss = 0
@@ -89,10 +90,10 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
 
             #clip the gradient if it passes the threshhole
             torch.nn.utils.clip_grad_norm_(model.parameters(), 0.5)
-            
+
             optimizer.step() #perform gradient steps
 
-            total_loss += loss.data.item() #accomulate the los
+            total_loss += loss.data.item() #accomulate the loss
 
         print("Epoch: {}, BCELoss: {}".format(epoch, total_loss / len(train_loader)))
 
