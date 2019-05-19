@@ -77,8 +77,19 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
             batch_X = batch_X.to(device)
             batch_y = batch_y.to(device)
             # TODO: Complete this train method to train the model provided.
+            optimizer.zero_grad() #clean the accomulated gradients
 
-            total_loss += loss.data.item()
+            out = model(batch_X) #return the model's output
+            #calculate the loss and return it
+            loss = loss_fn(out.squeeze(), batch_y.float())
+            loss.backward() #perform backpropagation
+
+            #clip the gradient if it passes the threshhole
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 0.5)
+            optimizer.step() #perform gradient steps
+
+            total_loss += loss.data.item() #accomulate the los
+
         print("Epoch: {}, BCELoss: {}".format(epoch, total_loss / len(train_loader)))
 
 if __name__ == '__main__':
