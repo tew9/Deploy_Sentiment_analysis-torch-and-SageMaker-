@@ -34,3 +34,14 @@ In addition, you will deploy and use your trained model a second time. In the se
 1. Make sure you have an access to amazon SageMaker.
 2. Most of the frameworks used in this project are already included with SageMaker
 3. install them if they’re using SageMaker terminal
+
+**Important Requirements**
+pandas
+
+numpy
+
+nltk
+
+beautifulsoup4
+
+html5lib
