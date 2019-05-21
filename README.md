@@ -37,7 +37,11 @@ In addition, you will deploy and use your trained model a second time. In the se
 
 **Important Requirements**
 pandas
+
 numpy
+
 nltk
+
 beautifulsoup4
+
 html5lib
