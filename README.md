@@ -1,6 +1,6 @@
 # Deploy_Sentiment_analysis-torch-and-SageMaker-
 This project deployed a sentiment analaysis model 
-with a simple cstom website that send a areview to the model 
+with a simple custom website that send a areview to the model 
 and the model (hosted through amazon AWS) will do return back the prediction and displays it 
 to the user using the created website.
 
